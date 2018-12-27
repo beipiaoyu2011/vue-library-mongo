@@ -10,7 +10,7 @@ const IS_PRO = ['production'].includes(process.env.NODE_ENV);
 module.exports = {
     outputDir: 'cdn',
     pages: {
-        index: 'src/login.js',
+        index: 'src/index.js',
     },
     productionSourceMap: false,
     runtimeCompiler: true,

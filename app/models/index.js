@@ -4,7 +4,7 @@ const url = "mongodb+srv://wz:master2011@cluster0-f5jim.mongodb.net/test?retryWr
 const Schema = mongoose.Schema;
 //设置schema 需要指定 collection 否则官方会自动名字加 ‘s’
 const specifyCollection = {
-    collection: 'user'
+    collection: 'user',
 };
 mongoose.connect(url, {
     useNewUrlParser: true

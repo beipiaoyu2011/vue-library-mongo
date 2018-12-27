@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vue-cli-service serve --open --port 8080",
+    "dev": "vue-cli-service serve --open --port 8090",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "api": "node app/index.js"
@@ -21,11 +21,18 @@
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0-0",
     "express": "^4.16.4",
+    "image-webpack-loader": "^4.6.0",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
     "lodash": "^4.17.11",
     "lodash-webpack-plugin": "^0.11.5",
     "mongoose": "^5.4.0",
+    "svg-url-loader": "^2.3.2",
+    "url-loader": "^1.1.2",
     "vue-resource": "^1.5.1",
+    "vue-router": "^3.0.2",
     "vue-template-compiler": "^2.5.17",
+    "vuex": "^3.0.1",
     "webpack-bundle-analyzer": "^3.0.3"
   },
   "eslintConfig": {

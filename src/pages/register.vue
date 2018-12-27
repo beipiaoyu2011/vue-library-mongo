@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<div class="loginBox" v-if="!userData">
-			<h3>LOGIN LIBRARY</h3>
+		<div class="loginBox">
+			<h3>REGIST LIBRARY</h3>
 			<div class="inputItem">
 				名字：
 				<input placeholder="请输入用户名" type="text" v-model="username">
@@ -11,14 +11,8 @@
 				<input placeholder="密码" type="text" v-model="password">
 			</div>
 			<div class="loginBtnItem">
-				<button @click="loginEvent" class="loginBtn">登录</button>
-				<span class="registerBtn">
-					<router-link :to="{path: 'register'}">注册</router-link>
-				</span>
+				<button @click="loginEvent" class="loginBtn">注册</button>
 			</div>
-		</div>
-		<div class="loginBox" v-else>
-			<h3>{{userData.username}}, Congruation on you</h3>
 		</div>
 	</div>
 </template>
@@ -27,9 +21,8 @@
 export default {
 	data() {
 		return {
-			username: 'wz',
-			password: '666',
-			userData: null,
+			username: '',
+			password: '',
 		};
 	},
 	created() {
@@ -37,20 +30,11 @@ export default {
 	},
 	methods: {
 		loginEvent() {
-			this.login();
+			this.register();
 		},
-		getUser() {
-			this.dataService.getUser({
-				_this: this,
-				options: {},
-				callback0: res => {
-					console.log(res.body.data);
-				},
-			});
-		},
-		login() {
+		register() {
 			this.userData = null;
-			this.dataService.login({
+			this.dataService.register({
 				_this: this,
 				options: {
 					username: this.username,
@@ -59,9 +43,9 @@ export default {
 				callback0: res => {
 					const { data } = res.body;
 					if (data.code == 102) {
-						alert('不存在');
+						alert('注册失败');
 					} else if (data.code == 0) {
-						this.userData = data.data;
+						alert('注册成功');
 					}
 				},
 			});

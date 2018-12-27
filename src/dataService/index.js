@@ -230,5 +230,12 @@ exportsObj.getUser = params => {
   return get('v1/user/get', params);
 };
 
+exportsObj.login = params => {
+  return get('v1/user/login', params);
+};
+
+exportsObj.register = params => {
+  return get('v1/user/register', params);
+};
 
 export default exportsObj;
